@@ -38,6 +38,8 @@ jobs:
           sudo apt install -y apt-transport-https ca-certificates curl gnupg lsb-release
           sudo apt install -y docker-compose
           docker -v
+          sudo service docker start
+          service docker status
 
   Test-Kitchen:
     runs-on: self-hosted

@@ -53,5 +53,13 @@ jobs:
     needs: Test-Kitchen
     steps:
       - name: Run kitchen list
+        continue-on-error: true
         run: kitchen verify
+  
+  Tidy-up:
+    runs-on: self-hostted
+    needs: Test-Results
+    steps:
+      - name: Remove containers
+        run: kitchen destroy
   

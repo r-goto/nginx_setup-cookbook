@@ -48,7 +48,7 @@ jobs:
           kitchen create
           kitchen converge
           
-  Results&TidyUp:
+  Results:
     runs-on: self-hosted
     needs: Kitchen-Test
     steps:

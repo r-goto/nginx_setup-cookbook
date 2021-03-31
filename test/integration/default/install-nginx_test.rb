@@ -8,7 +8,7 @@ describe package('nginx') do
 end
 
 describe service('nginx') do
-  it { should be_running }
+  it { should_not be_running }
   it { should be_enabled }
 end
 

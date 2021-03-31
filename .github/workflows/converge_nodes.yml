@@ -53,7 +53,6 @@ jobs:
     needs: Kitchen-Test
     steps:
       - name: Run kitchen list
-        continue-on-error: true
         run: kitchen verify
   
   Tidy-up:
@@ -61,5 +60,7 @@ jobs:
     needs: Results
     steps:
       - name: Remove containers
+        if: ${{ always() }}
         run: kitchen destroy
+        
   
